@@ -3,4 +3,4 @@
 
 this is just a weekend project for some deployment related exercises
 
-یہ تمہاری خالہ کا گھر نہیں ہے
+یہ تیری خالہ کا گھر نہیں ہے
