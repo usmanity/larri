@@ -1,0 +1,26 @@
+{
+  "name": "larri",
+  "version": "0.1.0",
+  "description": "a link shortening api server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "PORT=3000 node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usmanity/larri.git"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/usmanity/larri/issues"
+  },
+  "homepage": "https://github.com/usmanity/larri#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
