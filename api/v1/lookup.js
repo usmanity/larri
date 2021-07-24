@@ -4,11 +4,11 @@ const router = express.Router();
 router.route('/').get(getLookupHandler).post(postLookupHandler);
 
 function getLookupHandler(req, res, next) {
-  res.send('you"re in the Lookup ');
+  res.send('This is not implemented');
 }
 
 function postLookupHandler(req, res, next) {
-  res.send('hello');
+  res.send('This is not implemented');
 };
 
 module.exports = router;
