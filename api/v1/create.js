@@ -14,7 +14,7 @@ function getCreateHandler(req, res, next) {
   - POST /api/v1/create
   - Content-Type: application/json
   - Body: { "url": "https://www.google.com" }
-  - Response: { "shortUrl": "/abc123" }`
+  - Response: { "shortUrl": "/abc12" }`
   );
 }
 
@@ -39,7 +39,7 @@ function createShortUrl(url) {
   const hash = crypto.createHash('sha1');
   hash.update(url);
   const shortUrl = hash.digest('hex');
-  return shortUrl.substring(0, OUTPUT_LENGTH);  
+  return shortUrl.substring(0, OUTPUT_LENGTH);
 }
 
 module.exports = router;
