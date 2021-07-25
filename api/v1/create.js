@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+// router.use(express.urlencoded());
+router.use(express.json());
+
+const OUTPUT_LENGTH = require('./output_length.js').output_length();
+const crypto = require('crypto');
+
 router.route('/').get(getCreateHandler).post(postCreateHandler);
 
 function getCreateHandler(req, res, next) {
@@ -13,14 +19,27 @@ function getCreateHandler(req, res, next) {
 }
 
 function postCreateHandler(req, res, next) {
-  // TODO: implement create short url
   const { url } = req.body;
   const shortUrl = createShortUrl(url);
-  res.send({ shortUrl });
+  if (url.includes('usman.xyz')) {
+    res.status(400).send({
+      error: 'URL cannot be from usman.xyz'
+    });
+  } else {
+    res.send({ 
+      shortUrl,
+      full_url: url,
+      more_info: `https://s.usman.xyz/${shortUrl}+`
+    });
+  }
 };
 
 function createShortUrl(url) {
-  return `/abc123`;
+  console.log(url);
+  const hash = crypto.createHash('sha1');
+  hash.update(url);
+  const shortUrl = hash.digest('hex');
+  return shortUrl.substring(0, OUTPUT_LENGTH);  
 }
 
 module.exports = router;
