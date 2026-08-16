@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/usmanity/larri#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
